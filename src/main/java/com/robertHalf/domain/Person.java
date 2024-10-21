@@ -26,7 +26,6 @@ public class Person {
     @JoinColumn(name = "ID_GENDER")
     private Gender gender;
 
-    // Getters e Setters
     public Integer getIdPerson() {
         return idPerson;
     }
