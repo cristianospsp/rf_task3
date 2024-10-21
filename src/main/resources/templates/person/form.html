@@ -27,12 +27,15 @@
 
         <div class="form-group">
             <label for="gender">Gender:</label>
-            <select id="gender" th:field="*{gender}" class="form-control">
+            <select id="gender" th:field="*{gender.idGender}" class="form-control" required>
                 <option th:each="gender : ${genders}"
-                        th:value="${gender}"
+                        th:value="${gender.idGender}"
                         th:text="${gender.name}">
                 </option>
             </select>
+            <div th:if="${#fields.hasErrors('gender')}" class="text-danger">
+                <p th:errors="*{gender}"></p>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-success mt-3">Save</button>
